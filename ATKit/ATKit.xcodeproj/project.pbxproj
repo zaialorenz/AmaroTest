@@ -14,9 +14,7 @@
 		B4AC3A3E1E2442BB0052B13A /* ATSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC3A3D1E2442BB0052B13A /* ATSize.swift */; };
 		B4AC3A411E244B470052B13A /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = B4AC3A401E244B470052B13A /* products.json */; };
 		B4AC3A441E244BB10052B13A /* ATComunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC3A431E244BB10052B13A /* ATComunicationManager.swift */; };
-		B4AC3A4A1E244E2D0052B13A /* ATOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC3A491E244E2D0052B13A /* ATOrder.swift */; };
 		B4AC3A611E2457420052B13A /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC3A601E2457420052B13A /* StringExt.swift */; };
-		B4AC3A631E245C6B0052B13A /* ATProductOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC3A621E245C6B0052B13A /* ATProductOrder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +27,7 @@
 		B4AC3A3D1E2442BB0052B13A /* ATSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATSize.swift; sourceTree = "<group>"; };
 		B4AC3A401E244B470052B13A /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		B4AC3A431E244BB10052B13A /* ATComunicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATComunicationManager.swift; sourceTree = "<group>"; };
-		B4AC3A491E244E2D0052B13A /* ATOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATOrder.swift; sourceTree = "<group>"; };
 		B4AC3A601E2457420052B13A /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
-		B4AC3A621E245C6B0052B13A /* ATProductOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATProductOrder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +87,6 @@
 			children = (
 				B4AC3A3B1E2441CE0052B13A /* ATProduct.swift */,
 				B4AC3A3D1E2442BB0052B13A /* ATSize.swift */,
-				B4AC3A491E244E2D0052B13A /* ATOrder.swift */,
-				B4AC3A621E245C6B0052B13A /* ATProductOrder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,11 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AC3A441E244BB10052B13A /* ATComunicationManager.swift in Sources */,
-				B4AC3A4A1E244E2D0052B13A /* ATOrder.swift in Sources */,
 				B4AC3A3C1E2441CE0052B13A /* ATProduct.swift in Sources */,
 				B4AC3A3E1E2442BB0052B13A /* ATSize.swift in Sources */,
 				B4AC3A611E2457420052B13A /* StringExt.swift in Sources */,
-				B4AC3A631E245C6B0052B13A /* ATProductOrder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,8 +41,25 @@ class ATProductViewController: ATBaseViewController {
     }
     
     @IBAction func clickedButtonBuy(_ sender: Any) {
-        let order = ATOrderRealm.createOrder()
-        order.addProduct(product: self.product, size: self.product.sizes[self.selectedSize])
+        
+        let productModel = ATProductModel(context: context)
+        
+        productModel.name = self.product.name
+        productModel.style = self.product.style
+        productModel.codeColor = self.product.codeColor
+        productModel.colorSlug = self.product.colorSlug
+        productModel.color = self.product.color
+        productModel.onSale = self.product.onSale
+        productModel.regularPrice = self.product.regularPrice
+        productModel.actualPrice = self.product.actualPrice
+        productModel.discountPercentage = self.product.discountPercentage
+        productModel.installment = self.product.installments
+        productModel.image = self.product.image
+        productModel.selectedSize = self.product.sizes[self.selectedSize].size
+        
+        ad.saveContext()
+        
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func clickedButtonPP(_ sender: Any) {
@@ -93,14 +110,14 @@ class ATProductViewController: ATBaseViewController {
     func selectSize(sizeNumber: Int) {
         switch sizeNumber {
         case 0:
-            self.buttonP.backgroundColor = UIColor(hue:0.02, saturation:0.08, brightness:0.82, alpha:1.00)
+            self.buttonPP.backgroundColor = UIColor(hue:0.02, saturation:0.08, brightness:0.82, alpha:1.00)
             self.buttonPP.backgroundColor = UIColor.white
             self.buttonM.backgroundColor = UIColor.white
             self.buttonG.backgroundColor = UIColor.white
             self.buttonG.backgroundColor = UIColor.white
             self.buttonGG.backgroundColor = UIColor.white
         case 1:
-            self.buttonPP.backgroundColor = UIColor(hue:0.02, saturation:0.08, brightness:0.82, alpha:1.00)
+            self.buttonP.backgroundColor = UIColor(hue:0.02, saturation:0.08, brightness:0.82, alpha:1.00)
             self.buttonP.backgroundColor = UIColor.white
             self.buttonM.backgroundColor = UIColor.white
             self.buttonG.backgroundColor = UIColor.white

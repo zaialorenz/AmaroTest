@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 public class ATProduct: NSObject {
     public var name: String!
@@ -75,6 +74,10 @@ public class ATProduct: NSObject {
         return product
     }
     
+    public func saveProduct() {
+        
+    }
+    
     public static func getProducts(json: NSArray) -> [ATProduct] {
         var products = [ATProduct]()
         
@@ -87,52 +90,31 @@ public class ATProduct: NSObject {
         return products
     }
     
-    public func fromRealm(realm: ATProductRealm) {
-        self.name = realm.name
-        self.style = realm.style
-        self.codeColor = realm.codeColor
-        self.colorSlug = realm.colorSlug
-        self.color = realm.color
-        self.onSale = realm.onSale
-        self.regularPrice = realm.regularPrice
-        self.actualPrice = realm.actualPrice
-        self.discountPercentage = realm.discountPercentage
-        self.installments = realm.installments
-        self.image = realm.image
-//        self.size = sizeRealm
+    public static func getProductList() -> [ATProduct] {
+        var products = [ATProduct]()
+        
+        
+        return products
+    }
+    
+    public static func calculateFinalPrice(products: [ATProduct]) -> String {
+        var price: Double = 0.0
+        for product in products {
+            price += product.actualPrice.getPrice()
+        }
+        
+        return "Valor Final: \(price.roundTo(places: 2))"
+    }
+    
+    public func removeProduct(inde: Int) {
+        
+        
     }
 }
 
-public class ATProductRealm: Object {
-    public var name: String!
-    public var style: String!
-    public var codeColor: String!
-    public var colorSlug: String!
-    public var color: String!
-    public var onSale = false
-    public var regularPrice: String!
-    public var actualPrice: String!
-    public var discountPercentage: String!
-    public var installments: String!
-    public var image: String!
-    public var size: ATSizeRealm!
-    
-    public static func productToRealm(product: ATProduct, sizeRealm: ATSizeRealm) -> ATProductRealm {
-        let realm = ATProductRealm()
-        
-        realm.name = product.name
-        realm.style = product.style
-        realm.codeColor = product.codeColor
-        realm.colorSlug = product.colorSlug
-        realm.color = product.color
-        realm.onSale = product.onSale
-        realm.regularPrice = product.regularPrice
-        realm.actualPrice = product.actualPrice
-        realm.discountPercentage = product.discountPercentage
-        realm.installments = product.installments
-        realm.image = product.image
-        realm.size = sizeRealm
-        
-        return realm
+extension Double {
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }

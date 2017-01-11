@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Order View Controller-->
+        <!--Title-->
         <scene sceneID="Wxd-oF-g6r">
             <objects>
                 <viewController id="Dam-W5-878" customClass="ATOrderViewController" customModule="AmaroTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,6 +94,9 @@
                             <constraint firstItem="mER-gg-xGA" firstAttribute="top" secondItem="Ygb-uj-az1" secondAttribute="bottom" id="icc-9b-kVi"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="t6P-36-Wbh">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="8qr-l1-IEk"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="labelFinalPrice" destination="TwC-HR-rCB" id="J5c-cx-u3L"/>
                         <outlet property="tableProducts" destination="Mrb-WM-mhc" id="DdG-Uq-sPh"/>

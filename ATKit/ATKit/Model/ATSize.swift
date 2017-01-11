@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 public class ATSize: NSObject {
     public var available: Bool!
@@ -28,20 +27,5 @@ public class ATSize: NSObject {
         }
         
         return size
-    }
-}
-
-public class ATSizeRealm: Object {
-    public dynamic var available = true
-    public dynamic var size: String!
-    public dynamic var sku: String!
-    
-    static func sizeToRealm(size: ATSize) -> ATSizeRealm {
-        let realm = ATSizeRealm()
-        
-        realm.size = size.size
-        realm.sku = size.sku
-        
-        return realm
     }
 }

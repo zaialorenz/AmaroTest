@@ -12,7 +12,7 @@ import MGSwipeTableCell
 
 class ATProductOrderTableViewCell: MGSwipeTableCell {
     
-    var product: ATProductRealm! 
+    var product: ATProduct! 
 
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelValue: UILabel!
@@ -27,6 +27,12 @@ class ATProductOrderTableViewCell: MGSwipeTableCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(product: ATProductModel) {
+        self.labelName.text = product.name
+        self.labelSize.text = "Tamanho: \(product.selectedSize)"
+        self.labelValue.text = product.actualPrice
     }
     
     
