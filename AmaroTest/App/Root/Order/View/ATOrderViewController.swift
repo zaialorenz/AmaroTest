@@ -8,18 +8,32 @@
 
 import UIKit
 import ATKit
+import MGSwipeTableCell
 
 class ATOrderViewController: ATBaseViewController {
-
+    var order: ATOrderRealm!
+    var products = [ATProduct]()
+    @IBOutlet weak var labelFinalPrice: UILabel!
+    @IBOutlet weak var tableProducts: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.order = ATOrderRealm.createOrder()
+        self.tableProducts.delegate = self
+        self.tableProducts.dataSource = self
+        self.loadInfo()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadInfo() {
+        self.products = self.order.getProducts()
+        self.tableProducts.reloadData()
+        self.labelFinalPrice.text = "\(self.order.finalPrice)"
     }
     
 
@@ -40,7 +54,16 @@ extension ATOrderViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell") as! ATProductOrderTableViewCell
+        
+        cell.rightButtons = [MGSwipeButton(title: "Remover", backgroundColor: UIColor(hue:0.00, saturation:0.00, brightness:0.20, alpha:1.00), callback: { (result) -> Bool in
+            self.order.removeProduct(index: indexPath.row)
+            return true
+        })]
+
+        cell.labelName.text = self.products[indexPath.row].name
+        cell.labelValue.text = self.products[indexPath.row].actualPrice
+        //cell.labelSize.text = "Tamanho: \(self.order.products[indexPath.row].size.size ?? "")"
         
         return cell
     }

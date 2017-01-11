@@ -5,3 +5,4 @@ target 'AmaroTest'
   use_frameworks!
     pod 'SDWebImage', '~>3.8'
     pod 'DGActivityIndicatorView'
+    pod 'MGSwipeTableCell'

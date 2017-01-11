@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MGSwipeTableCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-AmaroTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A688B5F1A276F9F72DB3D2149CF7232</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1CD80321715FDB12A3A31B7BCB09EA28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3814077B60A225441E135CD435F07186</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>798D99E04B409359D7730B1105CFD708</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C64EC417D410C249E093D5F515C02CDF</key>
+		<key>71C830B9AFD9BD7DCD3285444D6E3D4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

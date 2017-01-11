@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		250010D763ED20FD4828BD4C /* Pods_AmaroTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71B378466C23363210068AE /* Pods_AmaroTest.framework */; };
+		B44B09991E25BBE800C26938 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09971E25BBE800C26938 /* RealmSwift.framework */; };
+		B44B099A1E25BBE800C26938 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09981E25BBE800C26938 /* Realm.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B44B099B1E25BC7400C26938 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09971E25BBE800C26938 /* RealmSwift.framework */; };
+		B44B099C1E25BC7400C26938 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09971E25BBE800C26938 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B44B099D1E25BC7400C26938 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09981E25BBE800C26938 /* Realm.framework */; };
+		B44B099E1E25BC7400C26938 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09981E25BBE800C26938 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B496B41B1E243D4F000E2CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B496B41A1E243D4F000E2CB0 /* AppDelegate.swift */; };
 		B496B41D1E243D4F000E2CB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B496B41C1E243D4F000E2CB0 /* ViewController.swift */; };
 		B496B4201E243D4F000E2CB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B496B41E1E243D4F000E2CB0 /* Main.storyboard */; };
@@ -51,6 +57,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B44B099E1E25BC7400C26938 /* Realm.framework in Embed Frameworks */,
+				B44B099C1E25BC7400C26938 /* RealmSwift.framework in Embed Frameworks */,
 				B4AC3A471E244C640052B13A /* ATKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -61,6 +69,8 @@
 /* Begin PBXFileReference section */
 		912555FBF08B3F495B1836A9 /* Pods-AmaroTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroTest/Pods-AmaroTest.release.xcconfig"; sourceTree = "<group>"; };
 		A71B378466C23363210068AE /* Pods_AmaroTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmaroTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44B09971E25BBE800C26938 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		B44B09981E25BBE800C26938 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		B496B4171E243D4F000E2CB0 /* AmaroTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmaroTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B496B41A1E243D4F000E2CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B496B41C1E243D4F000E2CB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +101,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44B099D1E25BC7400C26938 /* Realm.framework in Frameworks */,
+				B44B099A1E25BBE800C26938 /* Realm.framework in Frameworks */,
+				B44B099B1E25BC7400C26938 /* RealmSwift.framework in Frameworks */,
 				B4AC3A461E244C640052B13A /* ATKit.framework in Frameworks */,
 				250010D763ED20FD4828BD4C /* Pods_AmaroTest.framework in Frameworks */,
+				B44B09991E25BBE800C26938 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +135,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B44B09961E25BBC300C26938 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B44B09971E25BBE800C26938 /* RealmSwift.framework */,
+				B44B09981E25BBE800C26938 /* Realm.framework */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
 		B496B40E1E243D4E000E2CB0 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +170,7 @@
 		B496B4191E243D4F000E2CB0 /* AmaroTest */ = {
 			isa = PBXGroup;
 			children = (
+				B44B09961E25BBC300C26938 /* Vendor */,
 				B4AC3A4D1E244F8D0052B13A /* App */,
 				B496B41A1E243D4F000E2CB0 /* AppDelegate.swift */,
 				B496B41C1E243D4F000E2CB0 /* ViewController.swift */,
@@ -638,6 +662,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QURL32JV9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AmaroTest/Vendor",
+				);
 				INFOPLIST_FILE = AmaroTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GZ.AmaroTest;
@@ -652,6 +680,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4QURL32JV9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AmaroTest/Vendor",
+				);
 				INFOPLIST_FILE = AmaroTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GZ.AmaroTest;

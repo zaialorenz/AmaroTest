@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44B09941E25BB6300C26938 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09921E25BB6300C26938 /* RealmSwift.framework */; };
+		B44B09951E25BB6300C26938 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44B09931E25BB6300C26938 /* Realm.framework */; };
 		B4AC3A341E2441740052B13A /* ATKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B4AC3A321E2441740052B13A /* ATKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4AC3A3C1E2441CE0052B13A /* ATProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC3A3B1E2441CE0052B13A /* ATProduct.swift */; };
 		B4AC3A3E1E2442BB0052B13A /* ATSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC3A3D1E2442BB0052B13A /* ATSize.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B44B09921E25BB6300C26938 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		B44B09931E25BB6300C26938 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		B4AC3A2F1E2441740052B13A /* ATKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ATKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AC3A321E2441740052B13A /* ATKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATKit.h; sourceTree = "<group>"; };
 		B4AC3A331E2441740052B13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,12 +39,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44B09951E25BB6300C26938 /* Realm.framework in Frameworks */,
+				B44B09941E25BB6300C26938 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B44B098D1E25BA1500C26938 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B44B09921E25BB6300C26938 /* RealmSwift.framework */,
+				B44B09931E25BB6300C26938 /* Realm.framework */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
 		B4AC3A251E2441740052B13A = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +75,7 @@
 		B4AC3A311E2441740052B13A /* ATKit */ = {
 			isa = PBXGroup;
 			children = (
+				B44B098D1E25BA1500C26938 /* Vendor */,
 				B4AC3A5E1E24571F0052B13A /* Global */,
 				B4AC3A421E244B870052B13A /* Communication */,
 				B4AC3A3F1E244B2C0052B13A /* Resources */,
@@ -316,6 +332,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ATKit/Vendor",
+				);
 				INFOPLIST_FILE = ATKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -337,6 +357,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ATKit/Vendor",
+				);
 				INFOPLIST_FILE = ATKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -366,6 +390,7 @@
 				B4AC3A391E2441740052B13A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

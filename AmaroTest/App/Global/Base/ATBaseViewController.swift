@@ -7,16 +7,11 @@
 //
 
 import UIKit
-import ATKit
 
 class ATBaseViewController: UIViewController {
-    
-    var order = ATOrder()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

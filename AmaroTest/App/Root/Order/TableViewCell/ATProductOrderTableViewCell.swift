@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import ATKit
+import MGSwipeTableCell
 
-class ATProductOrderTableViewCell: UITableViewCell {
+class ATProductOrderTableViewCell: MGSwipeTableCell {
+    
+    var product: ATProductRealm! 
 
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelValue: UILabel!
+    @IBOutlet weak var labelSize: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

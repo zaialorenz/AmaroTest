@@ -62,11 +62,14 @@ class ATMainViewController: ATBaseViewController {
     @IBAction func clickedButtonSale(_ sender: Any) {
         self.loadItems(filter: .Sale)
     }
+    @IBAction func clickedButtonOrder(_ sender: Any) {
+        self.performSegue(withIdentifier: "ATMainViewControllerToATOrderViewController", sender: self)
+    }
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "" {
+        if segue.identifier == "ATMainViewControllerToATProductViewController" {
             let vc = segue.destination as! ATProductViewController
             vc.product = sender as! ATProduct
         }
@@ -88,6 +91,6 @@ extension ATMainViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "", sender: self.products[indexPath.item])
+        self.performSegue(withIdentifier: "ATMainViewControllerToATProductViewController", sender: self.products[indexPath.item])
     }
 }
