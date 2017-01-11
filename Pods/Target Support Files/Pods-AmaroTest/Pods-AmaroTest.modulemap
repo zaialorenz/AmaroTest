@@ -1,0 +1,6 @@
+framework module Pods_AmaroTest {
+  umbrella header "Pods-AmaroTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

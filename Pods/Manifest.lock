@@ -1,0 +1,17 @@
+PODS:
+  - DGActivityIndicatorView (2.1.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - DGActivityIndicatorView
+  - SDWebImage (~> 3.8)
+
+SPEC CHECKSUMS:
+  DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: 025bd7a7ed1ab441804a919c7c160728eb0b43f3
+
+COCOAPODS: 1.1.1
