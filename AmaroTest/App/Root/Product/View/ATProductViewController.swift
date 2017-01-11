@@ -111,14 +111,14 @@ class ATProductViewController: ATBaseViewController {
         switch sizeNumber {
         case 0:
             self.buttonPP.backgroundColor = UIColor(hue:0.02, saturation:0.08, brightness:0.82, alpha:1.00)
-            self.buttonPP.backgroundColor = UIColor.white
+            self.buttonP.backgroundColor = UIColor.white
             self.buttonM.backgroundColor = UIColor.white
             self.buttonG.backgroundColor = UIColor.white
             self.buttonG.backgroundColor = UIColor.white
             self.buttonGG.backgroundColor = UIColor.white
         case 1:
             self.buttonP.backgroundColor = UIColor(hue:0.02, saturation:0.08, brightness:0.82, alpha:1.00)
-            self.buttonP.backgroundColor = UIColor.white
+            self.buttonPP.backgroundColor = UIColor.white
             self.buttonM.backgroundColor = UIColor.white
             self.buttonG.backgroundColor = UIColor.white
             self.buttonG.backgroundColor = UIColor.white
@@ -152,6 +152,8 @@ class ATProductViewController: ATBaseViewController {
         self.imageProduct.sd_setImage(with: URL(string: self.product.image!))
         self.labelName.text = self.product.name
         
+        self.labelPrice.text = self.product.actualPrice
+        
         if self.product.sizes[0].available == false {
             self.buttonPP.alpha = 0.5
             self.buttonPP.isUserInteractionEnabled = false
@@ -175,6 +177,9 @@ class ATProductViewController: ATBaseViewController {
 
     }
     
+    @IBAction func clickeOrderButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "ATProductViewControllerToATOrderViewController", sender: self)
+    }
     /*
     // MARK: - Navigation
 

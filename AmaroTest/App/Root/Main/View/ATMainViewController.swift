@@ -84,7 +84,7 @@ extension ATMainViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ATProductCollectionViewCell
 
-//        cell.product = self.products[indexPath.item]
+        cell.product = self.products[indexPath.item]
         cell.setNeedsDisplay()
         
         return cell

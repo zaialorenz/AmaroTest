@@ -31,7 +31,7 @@ class ATProductOrderTableViewCell: MGSwipeTableCell {
     
     func configureCell(product: ATProductModel) {
         self.labelName.text = product.name
-        self.labelSize.text = "Tamanho: \(product.selectedSize)"
+        self.labelSize.text = "Tamanho: \(product.selectedSize!)"
         self.labelValue.text = product.actualPrice
     }
     

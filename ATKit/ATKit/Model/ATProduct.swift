@@ -74,10 +74,6 @@ public class ATProduct: NSObject {
         return product
     }
     
-    public func saveProduct() {
-        
-    }
-    
     public static func getProducts(json: NSArray) -> [ATProduct] {
         var products = [ATProduct]()
         
@@ -88,33 +84,5 @@ public class ATProduct: NSObject {
         }
         
         return products
-    }
-    
-    public static func getProductList() -> [ATProduct] {
-        var products = [ATProduct]()
-        
-        
-        return products
-    }
-    
-    public static func calculateFinalPrice(products: [ATProduct]) -> String {
-        var price: Double = 0.0
-        for product in products {
-            price += product.actualPrice.getPrice()
-        }
-        
-        return "Valor Final: \(price.roundTo(places: 2))"
-    }
-    
-    public func removeProduct(inde: Int) {
-        
-        
-    }
-}
-
-extension Double {
-    func roundTo(places:Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return (self * divisor).rounded() / divisor
     }
 }

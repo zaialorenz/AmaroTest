@@ -14,7 +14,7 @@ import MGSwipeTableCell
 class ATOrderViewController: ATBaseViewController {
     @IBOutlet weak var labelFinalPrice: UILabel!
     @IBOutlet weak var tableProducts: UITableView!
-    
+    var price: Double = 0.0
     var controller: NSFetchedResultsController<ATProductModel>!
     
     override func viewDidLoad() {
@@ -23,7 +23,6 @@ class ATOrderViewController: ATBaseViewController {
         self.tableProducts.delegate = self
         self.tableProducts.dataSource = self
         self.attemptFetch()
-        self.loadInfo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +30,6 @@ class ATOrderViewController: ATBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loadInfo() {
-//        self.labelFinalPrice.text = ATProduct.calculateFinalPrice(products: self.products)
-    }
-    
-
     /*
     // MARK: - Navigation
 
@@ -69,13 +63,15 @@ extension ATOrderViewController: UITableViewDelegate, UITableViewDataSource {
     func configureCell(cell: ATProductOrderTableViewCell, index: IndexPath) {
         let item = controller.object(at: index)
         cell.configureCell(product: item)
-        
         cell.rightButtons = [MGSwipeButton(title: "Remover", backgroundColor: UIColor(hue:0.00, saturation:0.00, brightness:0.20, alpha:1.00), callback: { (result) -> Bool in
             context.delete(item)
             ad.saveContext()
-            self.attemptFetch()
+            _ = self.navigationController?.popViewController(animated: true)
             return true
         })]
+        
+        self.price += (item.actualPrice?.getPrice())!
+        self.labelFinalPrice.text = "Valor final: \(self.price.roundTo(places: 2))"
     }
 }
 
@@ -119,5 +115,21 @@ extension ATOrderViewController: NSFetchedResultsControllerDelegate {
         default:
             break
         }
+    }
+}
+
+extension String{
+    mutating func getPrice() -> Double {
+        self = self.replacingOccurrences(of: "R$ ", with: "")
+        self = self.replacingOccurrences(of: ",", with: ".")
+        
+        return Double(self)!
+    }
+}
+
+extension Double {
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }
